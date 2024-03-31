@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Greet, { GreetTest } from "./greet";
 
 describe("greet", () => {
-  test("greet", () => {
+  it("greet", () => {
     render(<Greet />);
     const linkElement = screen.getByText(/hello/i);
     const linkElement2 = screen.getByText("hello");
@@ -14,7 +14,7 @@ describe("greet", () => {
   });
 
   describe("greetNested3", () => {
-    test("greet2", () => {
+    it("greet2", () => {
       render(<GreetTest name="John" />);
       const linkElement = screen.getByText("Hello John");
       expect(linkElement).toBeInTheDocument();
