@@ -6,5 +6,5 @@ export default function Greet() {
 }
 
 export const GreetTest = (props: GreetProps) => {
-  return <div>Hello {props.name} </div>;
+  return <div>Hello {props.name ? props.name : "ylm"} </div>;
 };
