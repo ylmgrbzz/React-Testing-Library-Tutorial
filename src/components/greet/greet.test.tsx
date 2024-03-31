@@ -14,7 +14,7 @@ test("greet", () => {
 
 test("greet2", () => {
   render(<GreetTest name="John" />);
-  const linkElement = screen.getByText("John");
+  const linkElement = screen.getByText("Hello John");
   expect(linkElement).toBeInTheDocument();
 
   expect(true).toBe(true);
