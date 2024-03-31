@@ -1,8 +1,5 @@
 import React from "react";
-
-type GreetProps = {
-  name?: string;
-};
+import { GreetProps } from "./greet.types";
 
 export default function Greet() {
   return <div>hello</div>;
