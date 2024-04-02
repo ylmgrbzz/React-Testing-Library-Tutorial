@@ -1,4 +1,4 @@
-import { render, screen, logRoles } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Counter } from "./counter";
 import user from "@testing-library/user-event";
 
@@ -39,10 +39,5 @@ describe("Counter", () => {
     await user.click(incrementButton);
     const countElement = screen.getByRole("heading");
     expect(countElement).toHaveTextContent("1");
-  });
-
-  test("render a count of 2 after inc button twice", async () => {
-    render(<Counter />);
-    const incrementButton = screen.getByRole("button", { name: "Increment" });
   });
 });
