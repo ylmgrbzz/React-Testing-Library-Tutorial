@@ -25,4 +25,10 @@ describe("Counter", () => {
     const counter = screen.getByTestId("custom-element");
     expect(counter).toBeInTheDocument();
   });
+
+  test("render a count of 0", () => {
+    render(<Counter />);
+    const countElement = screen.getByRole("heading");
+    expect(countElement).toHaveTextContent("0");
+  });
 });
