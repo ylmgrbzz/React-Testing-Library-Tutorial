@@ -9,7 +9,7 @@ export const SkillsTwo = (props: SkillsProps) => {
     setTimeout(() => {
       console.log("component did mount");
       setIsLogged(true);
-    }, 500);
+    }, 1001);
   }, []);
 
   return (

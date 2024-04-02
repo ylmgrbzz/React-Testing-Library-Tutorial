@@ -51,8 +51,12 @@ test("start learning button is eventually displayed", async () => {
     <SkillsTwo skills={["React", "TypeScript", "Jest"]} skillNumber={1} />
   );
 
-  const startLearningButton = await screen.findByRole("button", {
-    name: "start learning",
-  });
+  const startLearningButton = await screen.findByRole(
+    "button",
+    {
+      name: "start learning",
+    },
+    { timeout: 2000 }
+  );
   expect(startLearningButton).toBeInTheDocument();
 });
