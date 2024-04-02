@@ -8,7 +8,7 @@ describe("Application", () => {
     //   getByText: Bu fonksiyon, DOM'de belirli bir metni içeren herhangi bir öğeyi (genellikle bir <div>, <p>, <span> gibi) bulur. Metin,
     //  bu öğenin içeriğinde direkt olarak bulunabilir veya alt öğelerinin içeriğinde olabilir.
 
-    //    Bu fonksiyon, etiketi belirli bir metinle eşleşen bir HTML form elemanını bulmak için kullanılır.
+    // getByLabelText   Bu fonksiyon, etiketi belirli bir metinle eşleşen bir HTML form elemanını bulmak için kullanılır.
     //       Bu, genellikle bir < label > etiketi tarafından sağlanan bir form öğesi için kullanışlıdır.
     const pageHeading = screen.getByRole("heading", {
       name: "Job application form",
