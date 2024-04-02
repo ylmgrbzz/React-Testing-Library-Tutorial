@@ -26,5 +26,22 @@ describe("SkillsTwo", () => {
     const skills = ["React", "TypeScript", "Jest"];
     const skillsNumber = 1;
     render(<SkillsTwo skills={skills} skillNumber={skillsNumber} />);
+    // getByRole fonksiyonu, belirtilen role ve belirtilen seçiciye göre eşleşen bir element bulamazsa bir hata fırlatır. Bu nedenle, kullanıldığında bulunan
+    // elementin kesinlikle sayfada olması gerektiğini varsayar ve bulunamazsa bir hata mesajı döndürür.
+    // Bu nedenle, getByRole fonksiyonunu kullanırken, eğer belirtilen role ve seçiciye sahip element bulunamazsa test başarısız olur ve bir hata alırsınız.
+    // queryByRole:
+
+    // queryByRole fonksiyonu ise, belirtilen role ve belirtilen seçiciye göre eşleşen bir element bulamazsa null döner. Bu nedenle, hata fırlatmaz ve testiniz devam eder.
+    // Bu fonksiyon, elementin sayfada olup olmadığını kontrol etmek için kullanılabilir. Element bulunamazsa testin başarılı olması beklenir çünkü queryByRole null döner.
+
+    const loginButton = screen.getByRole("button", {
+      name: "login",
+    });
+    expect(loginButton).toBeInTheDocument();
+
+    const startLearningButton = screen.queryByRole("button", {
+      name: "start learning",
+    });
+    expect(startLearningButton).not.toBeInTheDocument();
   });
 });
