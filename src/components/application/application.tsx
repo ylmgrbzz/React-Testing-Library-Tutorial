@@ -15,7 +15,9 @@ export const Application = () => {
             id="name"
             placeholder="Fullname"
             value="Vishwas"
-            onChange={() => {}}
+            onChange={(e) => {
+              const newValue = e.target.value;
+            }}
           />
         </div>
         <div>

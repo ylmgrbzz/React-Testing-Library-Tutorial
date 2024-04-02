@@ -28,14 +28,14 @@ describe("Application", () => {
       name: "I agree to the terms and conditions",
     });
     const submitButton = screen.getByRole("button", { name: "Submit" });
-
     const termsElement2 = screen.getByLabelText(
       "I agree to the terms and conditions"
     );
+    const placeHolder = screen.getByPlaceholderText("Fullname");
+    const displayValue = screen.getByDisplayValue("Vishwas");
 
-    const plceHolder = screen.getByPlaceholderText("Fullname");
-
-    expect(plceHolder).toBeInTheDocument();
+    expect(displayValue).toBeInTheDocument();
+    expect(placeHolder).toBeInTheDocument();
     expect(bioElement).toBeInTheDocument();
     expect(termsElement2).toBeInTheDocument();
     expect(pageHeading).toBeInTheDocument();
