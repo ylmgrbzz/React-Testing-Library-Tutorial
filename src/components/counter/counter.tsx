@@ -5,7 +5,9 @@ export const Counter = () => {
 
   return (
     <div>
-      <p>{count}</p>
+      <h1 data-testid="custom-element" aria-label={`Count: ${count}`}>
+        {count}
+      </h1>
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <button onClick={() => setCount(count - 1)}>Decrement</button>
     </div>
