@@ -23,7 +23,12 @@ describe("Application", () => {
     });
     const submitButton = screen.getByRole("button", { name: "Submit" });
 
+    const termsElement2 = screen.getByLabelText(
+      "I agree to the terms and conditions"
+    );
+
     expect(bioElement).toBeInTheDocument();
+    expect(termsElement2).toBeInTheDocument();
     expect(pageHeading).toBeInTheDocument();
     expect(sectionHeading).toBeInTheDocument();
     expect(paragraph).toBeInTheDocument();
