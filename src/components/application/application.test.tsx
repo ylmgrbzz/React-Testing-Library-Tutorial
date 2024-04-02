@@ -10,7 +10,6 @@ describe("Application", () => {
 
     //    Bu fonksiyon, etiketi belirli bir metinle eşleşen bir HTML form elemanını bulmak için kullanılır.
     //       Bu, genellikle bir < label > etiketi tarafından sağlanan bir form öğesi için kullanışlıdır.
-
     const pageHeading = screen.getByRole("heading", {
       name: "Job application form",
     });
@@ -33,8 +32,16 @@ describe("Application", () => {
     );
     const placeHolder = screen.getByPlaceholderText("Fullname");
     const displayValue = screen.getByDisplayValue("Vishwas");
+    const imageElement = screen.getByAltText("a person with a laptop");
+    const customElement = screen.getByTestId("custom-element");
+    const closeElement = screen.getByTitle("close");
+    const yesElement = screen.getByTitle("yes");
 
     expect(displayValue).toBeInTheDocument();
+    expect(closeElement).toBeInTheDocument();
+    expect(yesElement).toBeInTheDocument();
+    expect(customElement).toBeInTheDocument();
+    expect(imageElement).toBeInTheDocument();
     expect(placeHolder).toBeInTheDocument();
     expect(bioElement).toBeInTheDocument();
     expect(termsElement2).toBeInTheDocument();
