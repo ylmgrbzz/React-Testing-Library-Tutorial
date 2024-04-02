@@ -1,9 +1,17 @@
 import { SkillsProps } from "./skills.types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const SkillsTwo = (props: SkillsProps) => {
   const { skills, skillNumber } = props;
   const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      console.log("component did mount");
+      setIsLogged(true);
+    }, 500);
+  }, []);
+
   return (
     <>
       <ul>
