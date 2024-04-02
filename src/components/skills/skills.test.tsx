@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Skills } from "./skills";
+import { SkillsTwo } from "./skillstwo";
 
 describe("Skills", () => {
   it("renders the skills component", () => {
@@ -17,5 +18,13 @@ describe("Skills", () => {
     expect(listItems).toHaveLength(skills.length);
     expect(listItems2).toBeInTheDocument();
     expect(listItemsText).toEqual(["React 1", "TypeScript 1", "Jest 1"]);
+  });
+});
+
+describe("SkillsTwo", () => {
+  it("renders the skills component", () => {
+    const skills = ["React", "TypeScript", "Jest"];
+    const skillsNumber = 1;
+    render(<SkillsTwo skills={skills} skillNumber={skillsNumber} />);
   });
 });
