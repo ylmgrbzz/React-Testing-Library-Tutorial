@@ -9,6 +9,26 @@ export const Users = () => {
       .then((data) => setUsers(data.map((user: { name: string }) => user.name)))
       .catch(() => setError("Error fetching users"));
   }, []);
+
+  //   useEffect(() => {
+  //     const fetchData = async () => {
+  //       try {
+  //         const response = await fetch(
+  //           "https://jsonplaceholder.typicode.com/users"
+  //         );
+  //         if (!response.ok) {
+  //           throw new Error("Error fetching users");
+  //         }
+  //         const data = await response.json();
+  //         setUsers(data.map((user: { name: string }) => user.name));
+  //       } catch (error: any) {
+  //         setError(error.message);
+  //       }
+  //     };
+
+  //     fetchData();
+  //   }, []);
+
   return (
     <div>
       <h1>Users</h1>
