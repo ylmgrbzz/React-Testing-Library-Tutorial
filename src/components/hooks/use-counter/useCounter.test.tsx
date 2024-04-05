@@ -23,8 +23,32 @@ describe("should accept and render the same initial count", () => {
     const { result } = renderHook(useCounter, {
       initialProps: {
         initialCount: 3,
+        reset: () => {},
       },
     });
     expect(result.current.count).toBe(3);
+  });
+});
+
+describe("useCounterDecrement", () => {
+  test("should decrement the count", () => {
+    const { result } = renderHook(useCounter);
+    act(() => {
+      result.current.decrement();
+    });
+    expect(result.current.count).toBe(-1);
+  });
+});
+
+describe("useCounterReset", () => {
+  test("should reset the count", () => {
+    const { result } = renderHook(useCounter);
+    act(() => {
+      result.current.increment();
+    });
+    act(() => {
+      result.current.reset();
+    });
+    expect(result.current.count).toBe(0);
   });
 });
