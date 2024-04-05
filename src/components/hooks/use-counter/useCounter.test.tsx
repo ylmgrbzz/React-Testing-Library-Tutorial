@@ -7,3 +7,24 @@ describe("useCounter", () => {
     expect(result.current.count).toBe(0);
   });
 });
+
+describe("useCounterIncrement", () => {
+  test("should increment the count", () => {
+    const { result } = renderHook(useCounter);
+    act(() => {
+      result.current.increment();
+    });
+    expect(result.current.count).toBe(1);
+  });
+});
+
+describe("should accept and render the same initial count", () => {
+  test("should render the initial count", () => {
+    const { result } = renderHook(useCounter, {
+      initialProps: {
+        initialCount: 3,
+      },
+    });
+    expect(result.current.count).toBe(3);
+  });
+});
