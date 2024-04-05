@@ -10,7 +10,14 @@ describe("CounterTwo", () => {
   });
 });
 
+// İkinci test ise describe bloğu dışında yer alıyor ve handleIncrement ve handleDecrement adlı olay işleyicilerinin ilgili düğmeler tıklandığında doğru bir şekilde
+//  çağrılıp çağrılmadığını test ediyor.Bu işlem için jest.fn() kullanarak bu işleyiciler için sahte fonksiyonlar oluşturuyor, bu sahte işleyicilerle birlikte
+//   CounterTwo bileşenini render ediyor, "Artır" ve "Azalt" olarak etiketlenmiş düğmeleri screen.getByRole() kullanarak buluyor,
+//     bu düğmelere user.click() kullanarak tıklama simulasyonu gerçekleştiriyor ve son olarak her bir işleyicinin tam olarak bir kez çağrılıp
+//     çağrılmadığını toHaveBeenCalledTimes(1) kullanarak kontrol ediyor.
+
 test("handlers are called", () => {
+  // create mock functions
   const handleIncrement = jest.fn();
   const handleDecrement = jest.fn();
   render(
